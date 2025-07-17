@@ -1,0 +1,50 @@
+{
+  "name": "bubble-bliss-boba-shop",
+  "version": "1.0.0",
+  "description": "A modern boba tea shop website with online ordering system",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server . -p 3000 -o",
+    "dev": "npx live-server --port=3000 --open=/",
+    "build": "echo 'Static site - no build process needed'",
+    "deploy": "gh-pages -d .",
+    "lint": "npx htmlhint *.html && npx stylelint *.css",
+    "test": "echo 'No tests specified'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thirtytimesone/react-native.git"
+  },
+  "keywords": [
+    "boba",
+    "bubble-tea",
+    "restaurant",
+    "ordering-system",
+    "website",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "Bubble Bliss Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thirtytimesone/react-native/issues"
+  },
+  "homepage": "https://thirtytimesone.github.io/react-native/",
+  "devDependencies": {
+    "gh-pages": "^6.1.1",
+    "htmlhint": "^1.1.4",
+    "http-server": "^14.1.1",
+    "live-server": "^1.2.2",
+    "stylelint": "^16.2.1"
+  },
+  "dependencies": {},
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

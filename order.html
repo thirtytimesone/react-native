@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order - Bubble Bliss</title>
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="order.css">
 </head>
 <body>
@@ -12,167 +11,154 @@
     <header class="order-header">
         <div class="header-content">
             <button class="back-btn" onclick="window.location.href='index.html'">← Back</button>
-            <h1>🧋 Bubble Bliss - Order</h1>
-            <div class="cart-summary">
-                <span id="cart-count">0</span> items | $<span id="cart-total">0.00</span>
+            <h1>🧋 Bubble Bliss Order</h1>
+            <div class="cart-icon">
+                <span class="cart-count" id="cartCount">0</span>
+                🛒
             </div>
         </div>
     </header>
 
     <div class="order-container">
         <!-- Menu Categories -->
-        <div class="menu-categories">
-            <button class="category-btn active" data-category="all">All Items</button>
-            <button class="category-btn" data-category="milk-tea">Milk Tea</button>
-            <button class="category-btn" data-category="fruit-tea">Fruit Tea</button>
-            <button class="category-btn" data-category="specialty">Specialty</button>
-        </div>
-
-        <!-- Main Content -->
-        <div class="order-main">
-            <!-- Menu Items -->
-            <div class="menu-section">
-                <div class="menu-items-grid" id="menu-items">
-                    <!-- Items will be populated by JavaScript -->
-                </div>
-            </div>
-
-            <!-- Order Summary -->
-            <div class="order-summary">
-                <h3>Your Order</h3>
-                <div class="cart-items" id="cart-items">
-                    <p class="empty-cart">Your cart is empty</p>
-                </div>
-                <div class="order-total">
-                    <div class="total-line">
-                        <span>Subtotal:</span>
-                        <span>$<span id="subtotal">0.00</span></span>
-                    </div>
-                    <div class="total-line">
-                        <span>Tax:</span>
-                        <span>$<span id="tax">0.00</span></span>
-                    </div>
-                    <div class="total-line total-final">
-                        <span>Total:</span>
-                        <span>$<span id="final-total">0.00</span></span>
-                    </div>
-                </div>
-                <button class="checkout-btn" id="checkout-btn" disabled>
-                    Proceed to Checkout
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Customization Modal -->
-    <div class="modal" id="customization-modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 id="modal-item-name">Customize Your Drink</h3>
-                <button class="close-btn" onclick="closeModal()">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="customization-section">
-                    <h4>Size</h4>
-                    <div class="option-group">
-                        <label class="option">
-                            <input type="radio" name="size" value="regular" data-price="0" checked>
-                            <span>Regular (+$0.00)</span>
-                        </label>
-                        <label class="option">
-                            <input type="radio" name="size" value="large" data-price="1.00">
-                            <span>Large (+$1.00)</span>
-                        </label>
-                    </div>
-                </div>
+        <div class="menu-section">
+            <!-- 
+            ========================================
+            CUSTOM UI INSERTION POINT #1: MENU FILTERS
+            ========================================
+            Add custom filtering/search components here:
+            - Search bar with autocomplete
+            - Price range slider
+            - Dietary filters (vegan, sugar-free, etc.)
+            - Sort options dropdown
+            ========================================
+            -->
+            
+            <div class="category-tabs">
+                <button class="tab-btn active" onclick="showCategory('signature')">Signature Drinks</button>
+                <button class="tab-btn" onclick="showCategory('milk-tea')">Milk Tea</button>
+                <button class="tab-btn" onclick="showCategory('fruit-tea')">Fruit Tea</button>
+                <button class="tab-btn" onclick="showCategory('specialty')">Specialty</button>
                 
-                <div class="customization-section">
-                    <h4>Ice Level</h4>
-                    <div class="option-group">
-                        <label class="option">
-                            <input type="radio" name="ice" value="no-ice" checked>
-                            <span>No Ice</span>
-                        </label>
-                        <label class="option">
-                            <input type="radio" name="ice" value="light">
-                            <span>Light Ice</span>
-                        </label>
-                        <label class="option">
-                            <input type="radio" name="ice" value="regular">
-                            <span>Regular Ice</span>
-                        </label>
-                        <label class="option">
-                            <input type="radio" name="ice" value="extra">
-                            <span>Extra Ice</span>
-                        </label>
-                    </div>
-                </div>
+                <!-- 
+                ========================================
+                CUSTOM UI INSERTION POINT #2: ADDITIONAL TABS
+                ========================================
+                Add more category tabs or custom tab components:
+                <button class="tab-btn" onclick="showCategory('seasonal')">Seasonal</button>
+                <button class="tab-btn" onclick="showCategory('favorites')">My Favorites</button>
+                ========================================
+                -->
+            </div>
 
-                <div class="customization-section">
-                    <h4>Sweetness Level</h4>
-                    <div class="option-group">
-                        <label class="option">
-                            <input type="radio" name="sweetness" value="0" checked>
-                            <span>0%</span>
-                        </label>
-                        <label class="option">
-                            <input type="radio" name="sweetness" value="25">
-                            <span>25%</span>
-                        </label>
-                        <label class="option">
-                            <input type="radio" name="sweetness" value="50">
-                            <span>50%</span>
-                        </label>
-                        <label class="option">
-                            <input type="radio" name="sweetness" value="75">
-                            <span>75%</span>
-                        </label>
-                        <label class="option">
-                            <input type="radio" name="sweetness" value="100">
-                            <span>100%</span>
-                        </label>
+            <!-- Signature Drinks -->
+            <div class="menu-category active" id="signature">
+                <div class="menu-grid">
+                    <div class="menu-item" data-item="classic-milk-tea" data-price="5.50">
+                        <img src="https://via.placeholder.com/200x150/8B4513/FFFFFF?text=Classic+Milk+Tea" alt="Classic Milk Tea">
+                        <h3>Classic Milk Tea</h3>
+                        <p>Traditional black tea with creamy milk and tapioca pearls</p>
+                        <div class="price">$5.50</div>
+                        <button class="add-btn" onclick="addToCart('classic-milk-tea', 'Classic Milk Tea', 5.50)">Add to Cart</button>
                     </div>
-                </div>
-
-                <div class="customization-section">
-                    <h4>Add-ons</h4>
-                    <div class="option-group">
-                        <label class="option">
-                            <input type="checkbox" name="addons" value="tapioca" data-price="0.50">
-                            <span>Tapioca Pearls (+$0.50)</span>
-                        </label>
-                        <label class="option">
-                            <input type="checkbox" name="addons" value="jelly" data-price="0.50">
-                            <span>Grass Jelly (+$0.50)</span>
-                        </label>
-                        <label class="option">
-                            <input type="checkbox" name="addons" value="pudding" data-price="0.75">
-                            <span>Pudding (+$0.75)</span>
-                        </label>
-                        <label class="option">
-                            <input type="checkbox" name="addons" value="popping" data-price="0.60">
-                            <span>Popping Boba (+$0.60)</span>
-                        </label>
-                    </div>
-                </div>
-
-                <div class="quantity-section">
-                    <h4>Quantity</h4>
-                    <div class="quantity-controls">
-                        <button class="qty-btn" onclick="changeQuantity(-1)">-</button>
-                        <span id="item-quantity">1</span>
-                        <button class="qty-btn" onclick="changeQuantity(1)">+</button>
+                    
+                    <div class="menu-item" data-item="taro-bubble-tea" data-price="6.00">
+                        <img src="https://via.placeholder.com/200x150/9370DB/FFFFFF?text=Taro+Bubble+Tea" alt="Taro Bubble Tea">
+                        <h3>Taro Bubble Tea</h3>
+                        <p>Creamy taro flavor with chewy boba pearls</p>
+                        <div class="price">$6.00</div>
+                        <button class="add-btn" onclick="addToCart('taro-bubble-tea', 'Taro Bubble Tea', 6.00)">Add to Cart</button>
                     </div>
                 </div>
             </div>
-            <div class="modal-footer">
-                <div class="modal-price">
-                    $<span id="modal-price">0.00</span>
+
+            <!-- Milk Tea -->
+            <div class="menu-category" id="milk-tea">
+                <div class="menu-grid">
+                    <div class="menu-item" data-item="matcha-latte" data-price="6.50">
+                        <img src="https://via.placeholder.com/200x150/228B22/FFFFFF?text=Matcha+Latte" alt="Matcha Latte">
+                        <h3>Matcha Latte</h3>
+                        <p>Premium Japanese matcha with milk and pearls</p>
+                        <div class="price">$6.50</div>
+                        <button class="add-btn" onclick="addToCart('matcha-latte', 'Matcha Latte', 6.50)">Add to Cart</button>
+                    </div>
+                    
+                    <div class="menu-item" data-item="thai-tea" data-price="5.75">
+                        <img src="https://via.placeholder.com/200x150/FF8C00/FFFFFF?text=Thai+Tea" alt="Thai Tea">
+                        <h3>Thai Tea</h3>
+                        <p>Sweet and creamy Thai-style tea with condensed milk</p>
+                        <div class="price">$5.75</div>
+                        <button class="add-btn" onclick="addToCart('thai-tea', 'Thai Tea', 5.75)">Add to Cart</button>
+                    </div>
                 </div>
-                <button class="add-to-cart-btn" onclick="addToCart()">
-                    Add to Cart
-                </button>
             </div>
+
+            <!-- Fruit Tea -->
+            <div class="menu-category" id="fruit-tea">
+                <div class="menu-grid">
+                    <div class="menu-item" data-item="passion-fruit-tea" data-price="5.00">
+                        <img src="https://via.placeholder.com/200x150/FF6347/FFFFFF?text=Passion+Fruit" alt="Passion Fruit Tea">
+                        <h3>Passion Fruit Tea</h3>
+                        <p>Refreshing passion fruit tea with popping boba</p>
+                        <div class="price">$5.00</div>
+                        <button class="add-btn" onclick="addToCart('passion-fruit-tea', 'Passion Fruit Tea', 5.00)">Add to Cart</button>
+                    </div>
+                    
+                    <div class="menu-item" data-item="lychee-green-tea" data-price="5.25">
+                        <img src="https://via.placeholder.com/200x150/FFB6C1/FFFFFF?text=Lychee+Tea" alt="Lychee Green Tea">
+                        <h3>Lychee Green Tea</h3>
+                        <p>Light green tea with sweet lychee flavor</p>
+                        <div class="price">$5.25</div>
+                        <button class="add-btn" onclick="addToCart('lychee-green-tea', 'Lychee Green Tea', 5.25)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Specialty -->
+            <div class="menu-category" id="specialty">
+                <div class="menu-grid">
+                    <div class="menu-item" data-item="brown-sugar-boba" data-price="7.00">
+                        <img src="https://via.placeholder.com/200x150/8B4513/FFFFFF?text=Brown+Sugar" alt="Brown Sugar Boba">
+                        <h3>Brown Sugar Boba</h3>
+                        <p>Rich brown sugar syrup with fresh milk and boba</p>
+                        <div class="price">$7.00</div>
+                        <button class="add-btn" onclick="addToCart('brown-sugar-boba', 'Brown Sugar Boba', 7.00)">Add to Cart</button>
+                    </div>
+                    
+                    <div class="menu-item" data-item="cheese-foam-tea" data-price="6.75">
+                        <img src="https://via.placeholder.com/200x150/F5DEB3/000000?text=Cheese+Foam" alt="Cheese Foam Tea">
+                        <h3>Cheese Foam Tea</h3>
+                        <p>Premium tea topped with creamy cheese foam</p>
+                        <div class="price">$6.75</div>
+                        <button class="add-btn" onclick="addToCart('cheese-foam-tea', 'Cheese Foam Tea', 6.75)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cart Section -->
+        <div class="cart-section">
+            <h2>Your Order</h2>
+            <div class="cart-items" id="cartItems">
+                <p class="empty-cart">Your cart is empty</p>
+            </div>
+            <div class="cart-total">
+                <div class="subtotal">
+                    <span>Subtotal: </span>
+                    <span id="subtotal">$0.00</span>
+                </div>
+                <div class="tax">
+                    <span>Tax (8.5%): </span>
+                    <span id="tax">$0.00</span>
+                </div>
+                <div class="total">
+                    <span>Total: </span>
+                    <span id="total">$0.00</span>
+                </div>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn" onclick="checkout()" disabled>
+                Proceed to Checkout
+            </button>
         </div>
     </div>
 

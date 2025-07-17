@@ -1,3 +1,44 @@
+/* ========================================
+   BUBBLE BLISS MAIN WEBSITE STYLES
+   ========================================
+   This file contains all styling for the main website
+   Look for INSERTION POINT comments to add your custom styles
+*/
+
+/* ========================================
+   INSERTION POINT 1: Custom Font Imports
+   ========================================
+   Add your custom font imports here
+*/
+/* Example:
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+*/
+
+/* ========================================
+   INSERTION POINT 2: Custom CSS Variables
+   ========================================
+   Add your brand colors, fonts, and spacing here
+*/
+:root {
+    --primary-brown: #2c1810;
+    --secondary-brown: #8B4513;
+    --accent-gold: #d4a574;
+    --light-gold: #b8935f;
+    --background-light: #f8f8f8;
+    --text-dark: #333;
+    --white: #ffffff;
+    
+    /* INSERTION POINT 3: Add your custom variables here */
+    /* Example:
+    --brand-font: 'Poppins', sans-serif;
+    --heading-font: 'Dancing Script', cursive;
+    --custom-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    --custom-border-radius: 15px;
+    --custom-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    */
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,8 +48,14 @@
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: var(--text-dark);
     scroll-behavior: smooth;
+    
+    /* INSERTION POINT 4: Add custom body styles */
+    /* Example:
+    font-family: var(--brand-font);
+    overflow-x: hidden;
+    */
 }
 
 .container {

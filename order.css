@@ -1,18 +1,71 @@
-/* Order Page Styles */
-body {
-    background: #f5f5f5;
-    margin: 0;
-    padding: 0;
+/* ========================================
+   BUBBLE BLISS ORDER PAGE STYLES
+   ========================================
+   This file contains all styling for the order page
+   Look for INSERTION POINT comments to add your custom styles
+*/
+
+/* ========================================
+   INSERTION POINT 1: Custom CSS Variables
+   ========================================
+   Add your custom color scheme, fonts, and spacing here
+*/
+:root {
+    --primary-color: #8B4513;
+    --secondary-color: #d4a574;
+    --accent-color: #b8935f;
+    --background-color: #f5f5f5;
+    --text-color: #333;
+    --border-color: #e0e0e0;
+    --success-color: #28a745;
+    --error-color: #dc3545;
+    --warning-color: #ffc107;
+    
+    /* INSERTION POINT 2: Add your custom CSS variables here */
+    /* Example:
+    --custom-font: 'Your Custom Font', sans-serif;
+    --custom-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    --custom-border-radius: 12px;
+    --custom-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    */
 }
 
+/* ========================================
+   INSERTION POINT 3: Custom Font Imports
+   ========================================
+   Add your custom font imports here
+*/
+/* Example:
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: var(--background-color);
+    color: var(--text-color);
+    
+    /* INSERTION POINT 4: Add custom body styles */
+    /* Example:
+    font-family: var(--custom-font);
+    overflow-x: hidden;
+    line-height: 1.6;
+    */
+}
+
+/* Header */
 .order-header {
     background: #2c1810;
     color: white;
     padding: 1rem 0;
-    position: fixed;
-    width: 100%;
+    position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 100;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
@@ -30,7 +83,7 @@ body {
     color: white;
     border: none;
     padding: 8px 16px;
-    border-radius: 5px;
+    border-radius: 20px;
     cursor: pointer;
     font-weight: bold;
     transition: background 0.3s ease;
@@ -40,108 +93,171 @@ body {
     background: #b8935f;
 }
 
-.cart-summary {
-    background: #d4a574;
-    padding: 8px 16px;
-    border-radius: 20px;
+.order-header h1 {
+    font-size: 1.5rem;
+    color: #d4a574;
+}
+
+.cart-icon {
+    position: relative;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #ff4444;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
     font-weight: bold;
 }
 
+/* Main Container */
 .order-container {
     max-width: 1400px;
-    margin: 80px auto 0;
+    margin: 0 auto;
     padding: 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
 }
 
-.menu-categories {
+/* Menu Section */
+.menu-section {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.category-tabs {
     display: flex;
     gap: 10px;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #f0f0f0;
 }
 
-.category-btn {
-    background: white;
-    border: 2px solid #d4a574;
-    color: #8B4513;
-    padding: 10px 20px;
-    border-radius: 25px;
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 12px 20px;
     cursor: pointer;
-    font-weight: bold;
+    font-weight: 500;
+    color: #666;
+    border-bottom: 3px solid transparent;
     transition: all 0.3s ease;
 }
 
-.category-btn.active,
-.category-btn:hover {
-    background: #d4a574;
-    color: white;
+.tab-btn.active {
+    color: #8B4513;
+    border-bottom-color: #d4a574;
 }
 
-.order-main {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 20px;
+.tab-btn:hover {
+    color: #8B4513;
 }
 
-.menu-items-grid {
+.menu-category {
+    display: none;
+}
+
+.menu-category.active {
+    display: block;
+}
+
+.menu-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 20px;
 }
 
-.menu-item-card {
+.menu-item {
     background: white;
+    border: 1px solid #e0e0e0;
     border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    cursor: pointer;
+    padding: 15px;
+    text-align: center;
     transition: all 0.3s ease;
-    border: 2px solid transparent;
+    cursor: pointer;
 }
 
-.menu-item-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    border-color: #d4a574;
+.menu-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.menu-item-card h4 {
-    color: #8B4513;
+.menu-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
     margin-bottom: 10px;
-    font-size: 1.2rem;
 }
 
-.menu-item-card p {
+.menu-item h3 {
+    color: #8B4513;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.menu-item p {
     color: #666;
-    margin-bottom: 15px;
     font-size: 0.9rem;
+    margin-bottom: 10px;
     line-height: 1.4;
 }
 
-.menu-item-price {
+.price {
     font-size: 1.3rem;
     font-weight: bold;
     color: #d4a574;
+    margin-bottom: 10px;
 }
 
-.order-summary {
+.add-btn {
+    background: #d4a574;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.add-btn:hover {
+    background: #b8935f;
+    transform: translateY(-1px);
+}
+
+/* Cart Section */
+.cart-section {
     background: white;
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     height: fit-content;
     position: sticky;
     top: 100px;
 }
 
-.order-summary h3 {
+.cart-section h2 {
     color: #8B4513;
     margin-bottom: 20px;
     text-align: center;
 }
 
 .cart-items {
-    max-height: 300px;
+    max-height: 400px;
     overflow-y: auto;
     margin-bottom: 20px;
 }
@@ -150,6 +266,7 @@ body {
     text-align: center;
     color: #999;
     font-style: italic;
+    padding: 40px 0;
 }
 
 .cart-item {
@@ -157,53 +274,96 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #f0f0f0;
 }
 
-.cart-item-info h5 {
-    margin: 0 0 5px 0;
-    color: #8B4513;
+.cart-item:last-child {
+    border-bottom: none;
 }
 
-.cart-item-details {
-    font-size: 0.8rem;
-    color: #666;
+.item-info {
+    flex: 1;
 }
 
-.cart-item-price {
+.item-name {
     font-weight: bold;
-    color: #d4a574;
+    color: #8B4513;
+    margin-bottom: 2px;
 }
 
-.remove-item {
+.item-price {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.qty-btn {
+    background: #d4a574;
+    color: white;
+    border: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qty-btn:hover {
+    background: #b8935f;
+}
+
+.quantity {
+    font-weight: bold;
+    min-width: 20px;
+    text-align: center;
+}
+
+.remove-btn {
     background: #ff4444;
     color: white;
     border: none;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
+    padding: 5px 8px;
+    border-radius: 3px;
     cursor: pointer;
-    font-size: 12px;
-    margin-left: 10px;
+    font-size: 0.8rem;
 }
 
-.order-total {
-    border-top: 2px solid #eee;
+.remove-btn:hover {
+    background: #cc0000;
+}
+
+/* Cart Total */
+.cart-total {
+    border-top: 2px solid #f0f0f0;
     padding-top: 15px;
+    margin-bottom: 20px;
 }
 
-.total-line {
+.cart-total > div {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
-.total-final {
+.subtotal, .tax {
+    color: #666;
+}
+
+.total {
     font-weight: bold;
     font-size: 1.2rem;
     color: #8B4513;
-    border-top: 1px solid #ddd;
-    padding-top: 10px;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 8px;
+    margin-top: 8px;
 }
 
 .checkout-btn {
@@ -216,12 +376,12 @@ body {
     font-size: 1.1rem;
     font-weight: bold;
     cursor: pointer;
-    transition: background 0.3s ease;
-    margin-top: 15px;
+    transition: all 0.3s ease;
 }
 
 .checkout-btn:hover:not(:disabled) {
     background: #b8935f;
+    transform: translateY(-1px);
 }
 
 .checkout-btn:disabled {
@@ -229,171 +389,39 @@ body {
     cursor: not-allowed;
 }
 
-/* Modal Styles */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 2000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
-}
-
-.modal-content {
-    background-color: white;
-    margin: 5% auto;
-    padding: 0;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 500px;
-    max-height: 80vh;
-    overflow-y: auto;
-}
-
-.modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    border-bottom: 1px solid #eee;
-    background: #8B4513;
-    color: white;
-    border-radius: 10px 10px 0 0;
-}
-
-.close-btn {
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: white;
-}
-
-.modal-body {
-    padding: 20px;
-}
-
-.customization-section {
-    margin-bottom: 25px;
-}
-
-.customization-section h4 {
-    color: #8B4513;
-    margin-bottom: 15px;
-    font-size: 1.1rem;
-}
-
-.option-group {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.option {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    padding: 8px;
-    border-radius: 5px;
-    transition: background 0.3s ease;
-}
-
-.option:hover {
-    background: #f8f8f8;
-}
-
-.option input {
-    margin-right: 10px;
-}
-
-.quantity-section {
-    margin-bottom: 20px;
-}
-
-.quantity-controls {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    justify-content: center;
-}
-
-.qty-btn {
-    background: #d4a574;
-    color: white;
-    border: none;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.qty-btn:hover {
-    background: #b8935f;
-}
-
-#item-quantity {
-    font-size: 1.2rem;
-    font-weight: bold;
-    min-width: 30px;
-    text-align: center;
-}
-
-.modal-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    border-top: 1px solid #eee;
-    background: #f8f8f8;
-    border-radius: 0 0 10px 10px;
-}
-
-.modal-price {
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: #8B4513;
-}
-
-.add-to-cart-btn {
-    background: #d4a574;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.add-to-cart-btn:hover {
-    background: #b8935f;
-}
-
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .order-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .cart-section {
+        position: static;
+    }
+}
+
 @media (max-width: 768px) {
-    .order-main {
-        grid-template-columns: 1fr;
-    }
-    
-    .menu-items-grid {
-        grid-template-columns: 1fr;
-    }
-    
     .header-content {
         flex-direction: column;
         gap: 10px;
     }
     
-    .menu-categories {
-        justify-content: center;
+    .category-tabs {
+        flex-wrap: wrap;
+        gap: 5px;
     }
     
-    .modal-content {
-        width: 95%;
-        margin: 10% auto;
+    .tab-btn {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+    
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .order-container {
+        padding: 10px;
     }
 }
