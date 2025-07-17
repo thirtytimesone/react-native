@@ -62,7 +62,10 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
+    background: 
+        radial-gradient(circle at center, transparent 30%, rgba(0,0,0,0.7) 100%),
+        linear-gradient(rgba(44, 24, 16, 0.6), rgba(44, 24, 16, 0.6)),
+        url('background.jpg') center/cover no-repeat;
     color: white;
     height: 100vh;
     display: flex;
@@ -85,7 +88,7 @@ body {
 }
 
 .cta-button {
-    background: #d4a574;
+    background: linear-gradient(135deg, #d4a574 0%, #b8935f 100%);
     color: white;
     border: none;
     padding: 15px 40px;
@@ -94,13 +97,13 @@ body {
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4), 0 4px 10px rgba(212, 165, 116, 0.3);
 }
 
 .cta-button:hover {
-    background: #b8935f;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    background: linear-gradient(135deg, #b8935f 0%, #a0804f 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.5), 0 6px 15px rgba(212, 165, 116, 0.4);
 }
 
 /* Sections */
@@ -252,14 +255,14 @@ body {
     font-weight: bold;
     border-radius: 50px;
     cursor: pointer;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4), 0 4px 10px rgba(212, 165, 116, 0.3);
     transition: all 0.3s ease;
     animation: pulse 2s infinite;
 }
 
 .sticky-order-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 25px rgba(0,0,0,0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.5), 0 6px 15px rgba(212, 165, 116, 0.4);
 }
 
 @keyframes pulse {

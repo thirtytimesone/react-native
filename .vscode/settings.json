@@ -1,2 +1,7 @@
 {
+    "kiroAgent.trustedCommands": [
+        "git init",
+        "git *",
+        "git add index.html styles.css script.js"
+    ]
 }
