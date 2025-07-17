@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Bliss - Premium Boba Tea</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>🧋 Bubble Bliss</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#menu" class="nav-link">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#locations" class="nav-link">Locations</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#careers" class="nav-link">Careers</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Bubble Bliss</h1>
+            <p>Experience the perfect blend of premium tea and chewy tapioca pearls</p>
+            <button class="cta-button" onclick="scrollToOrder()">ORDER NOW</button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>At Bubble Bliss, we're passionate about crafting the perfect boba tea experience. Since 2020, we've been serving premium bubble tea made with the finest ingredients and authentic recipes from Taiwan.</p>
+            <div class="features">
+                <div class="feature">
+                    <h3>🌱 Fresh Ingredients</h3>
+                    <p>We use only the freshest tea leaves and natural flavors</p>
+                </div>
+                <div class="feature">
+                    <h3>🧋 Authentic Recipes</h3>
+                    <p>Traditional Taiwanese bubble tea recipes passed down through generations</p>
+                </div>
+                <div class="feature">
+                    <h3>✨ Premium Quality</h3>
+                    <p>Every drink is crafted with care and attention to detail</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="section">
+        <div class="container">
+            <h2>Our Menu</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <h3>Classic Milk Tea</h3>
+                    <p>Traditional black tea with creamy milk and tapioca pearls</p>
+                    <span class="price">$5.50</span>
+                </div>
+                <div class="menu-item">
+                    <h3>Taro Bubble Tea</h3>
+                    <p>Creamy taro flavor with chewy boba pearls</p>
+                    <span class="price">$6.00</span>
+                </div>
+                <div class="menu-item">
+                    <h3>Matcha Latte</h3>
+                    <p>Premium Japanese matcha with milk and pearls</p>
+                    <span class="price">$6.50</span>
+                </div>
+                <div class="menu-item">
+                    <h3>Fruit Tea</h3>
+                    <p>Refreshing fruit-infused tea with popping boba</p>
+                    <span class="price">$5.00</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section id="locations" class="section">
+        <div class="container">
+            <h2>Our Locations</h2>
+            <div class="locations-grid">
+                <div class="location">
+                    <h3>Downtown Branch</h3>
+                    <p>123 Main Street<br>City Center, ST 12345<br>Phone: (555) 123-4567</p>
+                    <p><strong>Hours:</strong> Mon-Sun 10AM-10PM</p>
+                </div>
+                <div class="location">
+                    <h3>University District</h3>
+                    <p>456 College Ave<br>University Area, ST 12346<br>Phone: (555) 234-5678</p>
+                    <p><strong>Hours:</strong> Mon-Sun 9AM-11PM</p>
+                </div>
+                <div class="location">
+                    <h3>Shopping Mall</h3>
+                    <p>789 Mall Blvd<br>Shopping Center, ST 12347<br>Phone: (555) 345-6789</p>
+                    <p><strong>Hours:</strong> Mon-Sun 11AM-9PM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Careers Section -->
+    <section id="careers" class="section">
+        <div class="container">
+            <h2>Join Our Team</h2>
+            <p>We're always looking for passionate individuals to join the Bubble Bliss family!</p>
+            <div class="careers-content">
+                <div class="job-openings">
+                    <h3>Current Openings</h3>
+                    <ul>
+                        <li>Barista - Full Time</li>
+                        <li>Shift Supervisor - Part Time</li>
+                        <li>Store Manager - Full Time</li>
+                        <li>Marketing Assistant - Remote</li>
+                    </ul>
+                </div>
+                <div class="benefits">
+                    <h3>Why Work With Us?</h3>
+                    <ul>
+                        <li>Competitive wages</li>
+                        <li>Flexible scheduling</li>
+                        <li>Free drinks during shifts</li>
+                        <li>Career growth opportunities</li>
+                        <li>Fun, friendly work environment</li>
+                    </ul>
+                </div>
+            </div>
+            <p>Interested? Send your resume to <a href="mailto:careers@bubblebliss.com">careers@bubblebliss.com</a></p>
+        </div>
+    </section>
+
+    <!-- Sticky Order Button -->
+    <div class="sticky-order">
+        <button class="sticky-order-btn" onclick="window.open('#', '_blank')">
+            🧋 ORDER NOW
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
