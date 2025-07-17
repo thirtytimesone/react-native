@@ -104,7 +104,7 @@
                  </div>
                  ======================================== -->
             
-            <button class="cta-button" onclick="window.location.href='order.html'">ORDER NOW</button>
+            <button class="cta-button" onclick="transitionToOrder()">ORDER NOW</button>
             
             <!-- ========================================
                  CUSTOM UI INSERTION POINT #8 - HERO BOTTOM
@@ -252,9 +252,21 @@
 
     <!-- Sticky Order Button -->
     <div class="sticky-order">
-        <button class="sticky-order-btn" onclick="window.location.href='order.html'">
+        <button class="sticky-order-btn" onclick="transitionToOrder()">
             🧋 ORDER NOW
         </button>
+    </div>
+
+    <!-- Page Transition Overlay -->
+    <div id="page-transition-overlay" class="page-transition-overlay">
+        <div class="transition-content">
+            <div class="bubble-loader">
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+            </div>
+            <h2>Preparing Your Order...</h2>
+        </div>
     </div>
 
     <script src="script.js"></script>

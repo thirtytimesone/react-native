@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Bliss - Nature's Perfect Blend</title>
+    <link rel="stylesheet" href="landing.css">
+</head>
+<body>
+    <!-- Video Background Section -->
+    <section class="video-hero">
+        <div class="video-container">
+            <video id="hero-video" autoplay muted loop>
+                <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4" type="video/mp4">
+                <!-- Fallback for browsers that don't support video -->
+                <div class="video-fallback"></div>
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title">Bubble Bliss</h1>
+            <p class="hero-subtitle">Where Nature Meets Perfect Tea</p>
+            <button class="enter-btn" onclick="enterSite()">Enter Experience</button>
+        </div>
+        
+        <!-- Video Controls -->
+        <div class="video-controls">
+            <button id="video-toggle" onclick="toggleVideo()">⏸️</button>
+            <button id="video-next" onclick="nextVideo()">⏭️</button>
+        </div>
+    </section>
+
+    <!-- Nature Video Gallery -->
+    <section class="nature-gallery">
+        <div class="gallery-container">
+            <h2>Our Natural Inspiration</h2>
+            <div class="video-grid">
+                <div class="video-card">
+                    <video autoplay muted loop>
+                        <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-info">
+                        <h3>Mountain Springs</h3>
+                        <p>Pure water from pristine mountain sources</p>
+                    </div>
+                </div>
+                
+                <div class="video-card">
+                    <video autoplay muted loop>
+                        <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_5mb.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-info">
+                        <h3>Tea Gardens</h3>
+                        <p>Organic tea leaves from sustainable farms</p>
+                    </div>
+                </div>
+                
+                <div class="video-card">
+                    <video autoplay muted loop>
+                        <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-info">
+                        <h3>Natural Harmony</h3>
+                        <p>Crafted with respect for nature</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3D Model Section -->
+    <section class="model-showcase">
+        <div class="showcase-container">
+            <h2>Our Signature Cup</h2>
+            <div class="model-container">
+                <!-- 
+                ========================================
+                3D MODEL INSERTION POINT
+                ========================================
+                Replace this placeholder with your 3D model viewer
+                Options:
+                1. Three.js implementation
+                2. Model-viewer web component
+                3. Babylon.js
+                4. A-Frame
+                
+                Example with model-viewer:
+                <model-viewer 
+                    src="your-model.glb" 
+                    alt="Bubble Tea Cup" 
+                    auto-rotate 
+                    camera-controls>
+                </model-viewer>
+                ========================================
+                -->
+                <div class="model-placeholder">
+                    <div class="rotating-cup">
+                        <div class="cup-body">
+                            <div class="cup-liquid"></div>
+                            <div class="cup-bubbles">
+                                <div class="bubble"></div>
+                                <div class="bubble"></div>
+                                <div class="bubble"></div>
+                                <div class="bubble"></div>
+                                <div class="bubble"></div>
+                            </div>
+                        </div>
+                        <div class="cup-straw"></div>
+                    </div>
+                </div>
+                
+                <!-- Alternative: Real 3D Model Integration -->
+                <!-- 
+                <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+                <model-viewer 
+                    src="path/to/your/bubble-tea-cup.glb"
+                    alt="3D Bubble Tea Cup"
+                    auto-rotate
+                    camera-controls
+                    environment-image="neutral"
+                    shadow-intensity="1"
+                    class="model-viewer">
+                </model-viewer>
+                -->
+            </div>
+            <div class="model-info">
+                <h3>Eco-Friendly Design</h3>
+                <p>Our signature cups are made from sustainable materials, designed to enhance your bubble tea experience while protecting our planet.</p>
+                <div class="model-features">
+                    <div class="feature">
+                        <span class="feature-icon">🌱</span>
+                        <span>Biodegradable</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">♻️</span>
+                        <span>Recyclable</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">🎨</span>
+                        <span>Custom Design</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="cta-container">
+            <h2>Ready to Experience Nature's Perfect Blend?</h2>
+            <button class="cta-button" onclick="enterSite()">Start Your Journey</button>
+        </div>
+    </section>
+
+    <!-- Page Transition Overlay -->
+    <div id="page-transition-overlay" class="page-transition-overlay">
+        <div class="transition-content">
+            <div class="nature-loader">
+                <div class="leaf"></div>
+                <div class="leaf"></div>
+                <div class="leaf"></div>
+            </div>
+            <h2>Entering Bubble Bliss...</h2>
+        </div>
+    </div>
+
+    <script src="landing.js"></script>
+</body>
+</html>

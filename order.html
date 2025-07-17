@@ -10,7 +10,7 @@
     <!-- Header -->
     <header class="order-header">
         <div class="header-content">
-            <button class="back-btn" onclick="window.location.href='index.html'">← Back</button>
+            <button class="back-btn" onclick="transitionToMain()">← Back</button>
             <h1>🧋 Bubble Bliss Order</h1>
             <div class="cart-icon">
                 <span class="cart-count" id="cartCount">0</span>
@@ -159,6 +159,18 @@
             <button class="checkout-btn" id="checkoutBtn" onclick="checkout()" disabled>
                 Proceed to Checkout
             </button>
+        </div>
+    </div>
+
+    <!-- Page Transition Overlay -->
+    <div id="page-transition-overlay" class="page-transition-overlay">
+        <div class="transition-content">
+            <div class="bubble-loader">
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+            </div>
+            <h2>Loading Menu...</h2>
         </div>
     </div>
 

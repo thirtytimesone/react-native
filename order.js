@@ -479,3 +479,55 @@ function submitOrder(orderData) {
  *     });
  * }
  */
+// =
+=======================================
+// PAGE TRANSITION FUNCTIONS
+// ========================================
+let isTransitioning = false;
+
+function transitionToMain() {
+    if (isTransitioning) return;
+    
+    showTransitionOverlay(() => {
+        window.location.href = 'index.html';
+    });
+}
+
+function transitionToLanding() {
+    if (isTransitioning) return;
+    
+    showTransitionOverlay(() => {
+        window.location.href = 'landing.html';
+    });
+}
+
+function showTransitionOverlay(callback) {
+    isTransitioning = true;
+    const overlay = document.getElementById('page-transition-overlay');
+    
+    if (overlay) {
+        // Show transition overlay with fade in
+        overlay.classList.add('active');
+        
+        // Execute callback after transition animation
+        setTimeout(() => {
+            if (callback) callback();
+        }, 800); // Match CSS transition duration
+    } else {
+        // Fallback if overlay doesn't exist
+        if (callback) callback();
+    }
+}
+
+// Update the back button to use smooth transition
+document.addEventListener('DOMContentLoaded', function() {
+    const backBtn = document.querySelector('.back-btn');
+    if (backBtn) {
+        backBtn.onclick = function(e) {
+            e.preventDefault();
+            transitionToMain();
+        };
+    }
+});
+
+console.log('🧋 Bubble Bliss Ordering System with Smooth Transitions Loaded!');
